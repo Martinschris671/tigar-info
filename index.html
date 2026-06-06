@@ -7,11 +7,12 @@
     <title>TigarInfo</title>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <style>
+      /* Global Reset */
       * {
         margin: 0;
         padding: 0;
@@ -22,132 +23,116 @@
       body {
         background: #f3f3f3;
         min-height: 100vh;
-
         display: flex;
         justify-content: center;
         align-items: flex-start;
-
-        padding-top: 90px;
+        /* Responsive padding: shrinks on small screens, expands on large */
+        padding: clamp(40px, 10vh, 90px) 15px;
       }
 
-      /* main container */
+      /* Main container */
       .container {
-        width: 90%;
+        width: 100%;
         max-width: 420px;
-
         text-align: center;
       }
 
-      /* blue circle */
+      /* Blue circle */
       .logo {
-        width: 140px;
-        height: 140px;
-
+        /* Fluid sizing for the logo */
+        width: clamp(110px, 30vw, 140px);
+        height: clamp(110px, 30vw, 140px);
         margin: auto;
-
         border-radius: 50%;
-
         background: linear-gradient(135deg, #1da1ff, #0066ff);
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         color: white;
-
-        font-size: 30px;
+        /* Fluid font size inside logo */
+        font-size: clamp(24px, 6vw, 30px);
         font-weight: 800;
-
         text-align: center;
-
         box-shadow: 0 10px 30px rgba(0, 102, 255, 0.25);
+        line-height: 1.2;
       }
 
-      /* title */
+      /* Title */
       h1 {
-        margin-top: 28px;
-
-        font-size: 42px;
-
+        margin-top: clamp(20px, 5vw, 28px);
+        /* Fluid typography: auto-adjusts based on screen width */
+        font-size: clamp(32px, 8vw, 42px);
         font-weight: 800;
-
         color: #111;
       }
 
-      /* description */
+      /* Description */
       p {
-        margin-top: 16px;
-
-        font-size: 20px;
-
+        margin-top: clamp(10px, 3vw, 16px);
+        font-size: clamp(16px, 4.5vw, 20px);
         line-height: 1.6;
-
         color: #222;
-
         font-weight: 500;
       }
 
-      /* telegram card */
+      /* Telegram card (Button) */
       .telegram-card {
-        margin-top: 38px;
-
+        margin-top: clamp(28px, 6vw, 38px);
         width: 100%;
-
         background: white;
-
         border-radius: 22px;
-
-        padding: 16px;
-
+        padding: clamp(12px, 3vw, 16px);
         display: flex;
         align-items: center;
-
         box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-
         text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
-      /* telegram icon */
+      /* Button Hover & Active States for better User Experience */
+      .telegram-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .telegram-card:active {
+        transform: translateY(1px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Telegram icon box */
       .telegram-icon {
-        width: 72px;
-        height: 72px;
-
-        border-radius: 18px;
-
+        width: clamp(56px, 15vw, 72px);
+        height: clamp(56px, 15vw, 72px);
+        border-radius: clamp(14px, 4vw, 18px);
         background: #229ed9;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         flex-shrink: 0;
       }
 
       .telegram-icon img {
-        width: 42px;
+        width: clamp(32px, 8vw, 42px);
       }
 
-      /* button text */
+      /* Button text */
       .telegram-text {
-        margin-left: 20px;
-
+        margin-left: clamp(14px, 4vw, 20px);
         text-align: left;
-
         color: #111;
-
-        font-size: 24px;
-
+        font-size: clamp(18px, 5.5vw, 24px);
         font-weight: 700;
+        line-height: 1.2;
       }
 
-      /* small footer */
+      /* Small footer */
       .footer {
-        margin-top: 80px;
-
+        margin-top: clamp(50px, 10vh, 80px);
         color: #777;
-
         font-size: 14px;
-
         line-height: 1.8;
       }
     </style>
@@ -172,194 +157,9 @@
         <div class="telegram-icon">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+            alt="Telegram ikona"
           />
         </div>
-
-        <div class="telegram-text">Pridruži se grupi! 🚀</div>
-      </a>
-
-      <!-- FOOTER -->
-      <div class="footer">Tigar Info • Telegram Zajednica</div>
-    </div>
-  </body>
-</html>
-<!doctype html>
-<html lang="hr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>TigarInfo</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
-      body {
-        background: #f3f3f3;
-        min-height: 100vh;
-
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-
-        padding-top: 90px;
-      }
-
-      /* main container */
-      .container {
-        width: 90%;
-        max-width: 420px;
-
-        text-align: center;
-      }
-
-      /* blue circle */
-      .logo {
-        width: 140px;
-        height: 140px;
-
-        margin: auto;
-
-        border-radius: 50%;
-
-        background: linear-gradient(135deg, #1da1ff, #0066ff);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        color: white;
-
-        font-size: 30px;
-        font-weight: 800;
-
-        text-align: center;
-
-        box-shadow: 0 10px 30px rgba(0, 102, 255, 0.25);
-      }
-
-      /* title */
-      h1 {
-        margin-top: 28px;
-
-        font-size: 42px;
-
-        font-weight: 800;
-
-        color: #111;
-      }
-
-      /* description */
-      p {
-        margin-top: 16px;
-
-        font-size: 20px;
-
-        line-height: 1.6;
-
-        color: #222;
-
-        font-weight: 500;
-      }
-
-      /* telegram card */
-      .telegram-card {
-        margin-top: 38px;
-
-        width: 100%;
-
-        background: white;
-
-        border-radius: 22px;
-
-        padding: 16px;
-
-        display: flex;
-        align-items: center;
-
-        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-
-        text-decoration: none;
-      }
-
-      /* telegram icon */
-      .telegram-icon {
-        width: 72px;
-        height: 72px;
-
-        border-radius: 18px;
-
-        background: #229ed9;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        flex-shrink: 0;
-      }
-
-      .telegram-icon img {
-        width: 42px;
-      }
-
-      /* button text */
-      .telegram-text {
-        margin-left: 20px;
-
-        text-align: left;
-
-        color: #111;
-
-        font-size: 24px;
-
-        font-weight: 700;
-      }
-
-      /* small footer */
-      .footer {
-        margin-top: 80px;
-
-        color: #777;
-
-        font-size: 14px;
-
-        line-height: 1.8;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <!-- BLUE CIRCLE -->
-      <div class="logo">Tigar<br />Info</div>
-
-      <!-- TITLE -->
-      <h1>Tigar Info ⚽</h1>
-
-      <!-- DESCRIPTION -->
-      <p>
-        Za sljedeće dojave i najbolje kvote,<br />
-        pridruži se našoj grupi koristeći link ispod! 📱
-      </p>
-
-      <!-- TELEGRAM BUTTON -->
-      <a class="telegram-card" href="https://t.me/tigarinfo">
-        <div class="telegram-icon">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
-          />
-        </div>
-
         <div class="telegram-text">Pridruži se grupi! 🚀</div>
       </a>
 
